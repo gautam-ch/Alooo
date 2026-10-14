@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "pnpm --filter @repo/database db:generate && tsup",
-    "start": "node dist/server.js",
+    "build": "pnpm --filter @repo/database db:generate",
+    "start": "tsx src/server.ts",
     "lint": "eslint .",
     "clean": "rm -rf dist"
   },

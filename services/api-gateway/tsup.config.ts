@@ -5,4 +5,6 @@ export default defineConfig({
   format: ["esm"],
   clean: true,
   noExternal: ["@repo/types", "@repo/database"],
+  external: ["@prisma/client", "@prisma/adapter-pg", "pg"],
+  shims: true,
 });
