@@ -1,7 +1,7 @@
 import { prisma } from "./client.js";
 
 async function main() {
-  console.log("🌱 Starting seed for Aaloo local database...");
+  console.log("🌱 Starting seed for Alooo local database...");
 
   // 1. Clean existing data in reverse order of dependencies
   await prisma.kotDailySequence.deleteMany();
@@ -43,7 +43,7 @@ async function main() {
   // 3. Create Shop
   const shop = await prisma.shop.create({
     data: {
-      name: "Aaloo Cafe",
+      name: "Alooo Cafe",
       address: "100ft Road, Indiranagar, Bangalore",
       gstNumber: "29ABCDE1234F1Z5",
       cgstRate: 250, // 2.5%
@@ -300,7 +300,7 @@ async function main() {
   }
 
   console.log("\n==================================================");
-  console.log("🎉 Local Aaloo Database Seeded Successfully!");
+  console.log("🎉 Local Alooo Database Seeded Successfully!");
   console.log("==================================================");
   console.log(`🏪 Shop ID:       ${shop.id}`);
   console.log(`🏬 Shop Name:     ${shop.name}`);

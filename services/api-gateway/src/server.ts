@@ -1,8 +1,13 @@
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
 dotenv.config();
-import {app} from './app.js';
+import { app } from "./app.js";
 
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000")
-})
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
+
+export default app;
