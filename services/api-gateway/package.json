@@ -2,11 +2,11 @@
   "name": "api-gateway",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/server.js",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "pnpm --filter @repo/database db:generate && pnpm --filter @repo/database build && tsc",
+    "build": "pnpm --filter @repo/database db:generate && tsup",
     "start": "node dist/server.js",
     "lint": "eslint .",
     "clean": "rm -rf dist"
@@ -23,6 +23,7 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^22.15.3",
     "@types/qrcode": "^1.5.6",
+    "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   },
   "dependencies": {
