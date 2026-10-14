@@ -20,6 +20,5 @@
     // "noUnusedParameters": true,
     // "noFallthroughCasesInSwitch": true,
     // "noPropertyAccessFromIndexSignature": true,
-  },
-  "include": ["src/**/*"]
+  }
 }
