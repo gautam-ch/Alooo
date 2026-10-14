@@ -201,7 +201,7 @@ export function PosScreen({ shopId, tableId }: { shopId: string; tableId: string
 
     // Quick +/- for simple lines already in draft (only works for variant-less, addon-less lines)
     const draftSimpleQty = (itemId: string) => {
-        const simple = draft.find((l) => l.item.id === itemId && !l.variant && l.addons.length === 0);
+        const simple = draft.find((l) => l.item.id === itemId && !l.variant && (l.addons?.length ?? 0) === 0);
         return simple?.quantity ?? 0;
     };
 
@@ -425,7 +425,7 @@ export function PosScreen({ shopId, tableId }: { shopId: string; tableId: string
                                             {l.item.name}
                                             {l.variant && <span className="text-gray-500"> · {l.variant.name}</span>}
                                         </p>
-                                        {l.addons.length > 0 && (
+                                        {l.addons && l.addons.length > 0 && (
                                             <p className="text-[11px] text-gray-500 leading-tight">
                                                 + {l.addons.map((a) => a.name).join(", ")}
                                             </p>

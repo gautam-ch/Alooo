@@ -4,7 +4,7 @@ export type KotItem = {
     orderItemId: string;
     name: string;
     variantName: string | null;
-    addons: { name: string; price: number }[];
+    addons?: { name: string; price: number }[];
     quantity: number;
 };
 

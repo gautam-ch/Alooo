@@ -293,6 +293,8 @@ async function main() {
           orderItemId: oi.id,
           name: oi.name,
           quantity: oi.quantity,
+          variantName: null,
+          addons: [],
         })),
       },
     });

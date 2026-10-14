@@ -62,7 +62,7 @@ export function KotPrintView({ kot }: { kot: KotDTO }) {
                 <div className="divider" />
 
                 <div>
-                    {kot.items.map((item, i) => (
+                    {(kot.items ?? []).map((item, i) => (
                         <div key={i} style={{ marginBottom: 6 }}>
                             <div>
                                 <span className="qty-col">{item.quantity}×</span>
@@ -71,7 +71,7 @@ export function KotPrintView({ kot }: { kot: KotDTO }) {
                                     <span> ({item.variantName})</span>
                                 )}
                             </div>
-                            {item.addons.length > 0 && (
+                            {item.addons && item.addons.length > 0 && (
                                 <div className="small" style={{ paddingLeft: 28 }}>
                                     + {item.addons.map((a) => a.name).join(", ")}
                                 </div>
@@ -83,7 +83,7 @@ export function KotPrintView({ kot }: { kot: KotDTO }) {
                 <div className="divider" />
 
                 <div className="small center">
-                    {kot.printCount > 0 ? `Reprint #${kot.printCount + 1}` : "1st print"} · Total {kot.items.reduce((s, i) => s + i.quantity, 0)} qty
+                    {kot.printCount > 0 ? `Reprint #${kot.printCount + 1}` : "1st print"} · Total {(kot.items ?? []).reduce((s, i) => s + i.quantity, 0)} qty
                 </div>
             </div>
         </>

@@ -113,7 +113,7 @@ export const CartDrawer = ({ shopId, tableNumber, onOrderPlaced }: CartDrawerPro
                     itemId: l.item.id,
                     quantity: l.quantity,
                     variantId: l.variant?.id,
-                    addonIds: l.addons.length ? l.addons.map((a) => a.id) : undefined,
+                    addonIds: l.addons?.length ? l.addons.map((a) => a.id) : undefined,
                 })) as any, // CreateOrderItem[] — typed loosely here because the SDK's items type is from CreateOrderSchema
             });
 

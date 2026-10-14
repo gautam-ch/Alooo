@@ -210,7 +210,7 @@ export function KitchenDisplay({ shopId }: { shopId: string }) {
                                     </div>
 
                                     <div className="px-3 py-3 flex-1 space-y-2">
-                                        {kot.items.map((item, i) => {
+                                        {(kot.items ?? []).map((item, i) => {
                                             const status = itemStatusFor(kot, item.orderItemId);
                                             const style = statusStyles[status];
                                             const isPending = pendingItem === item.orderItemId;
@@ -232,7 +232,7 @@ export function KitchenDisplay({ shopId }: { shopId: string }) {
                                                                     <span className="text-gray-500"> · {item.variantName}</span>
                                                                 )}
                                                             </div>
-                                                            {item.addons.length > 0 && (
+                                                            {item.addons && item.addons.length > 0 && (
                                                                 <p className="text-[11px] text-gray-500 pl-1">
                                                                     + {item.addons.map((a) => a.name).join(", ")}
                                                                 </p>
