@@ -9,7 +9,7 @@ model Menu {
 model Category {
     id         String  @id @default(cuid())
     menuId     String
-    name       String  @unique
+    name       String  
     orderIndex Int     @default(autoincrement())
     isActive   Boolean @default(true)
 
@@ -22,6 +22,7 @@ model Category {
     menu Menu @relation(fields: [menuId], references: [id])
 
     @@index([menuId, orderIndex])
+    @@unique([menuId,name])
 }
 
 model Item {
